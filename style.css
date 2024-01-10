@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+main {
+    padding-top: 3%;
+    height: 100vh;
+}
+
+
+nav {
+    display: flex;
+    justify-content:center;
+    height: 90px;
+    width: 100%;
+    background-color: #ffff;
+    border-bottom: 3px solid #daddda;
+    align-items: centers;
+    position:fixed;
+
+}
+
+nav .logo {
+    height: 100%;
+    width: 5%;
+}
+
+.logo img {
+    height: 100%;
+    width: 100%;
+}
+
+.textlogo {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 5%);
+    height: 100%;
+    justify-content: center;
+    font-size: 1.3vmax;
+}
+
+main {
+    padding-block-start: 3%;
+    min-height: calc(100% - 90px);
+    width: 100%;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.search-box {
+    margin-top: 80px;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+.box-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.box-content p,
+i {
+    font-size: 1.1rem;
+}
+
+#search{
+    height: 5vh;
+    width: 25vw;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    padding: 15px;
+    font-size: 1em;
+    border: 1px solid red;
+    outline: none;
+}
+
+.search button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    width: 3.1999999999999993vw;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    background-color: white;
+    border: 1px solid red;
+    background-color: red;
+    color: white;
+    overflow: hidden;
+    padding: 15px;
+}
+
+
+
+.main-content{
+    margin-block-start: 14px;
+}
+
+.result{
+    width: 100%;
+    margin-block-start: 40px;
+    justify-content: space-evenly;
+    min-height: 100%;
+    flex-wrap:wrap;
+    row-gap: 70px;
+}
+
+.main-content{
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.keyingredient{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.5vh;
+    width: 5vw;
+    background-color: white;
+    color: red;
+    border-radius: 4px;
+    margin-inline: auto;
+}
+
+.recipe-content{
+    text-align: center;
+    color: white;
+    height: 80vh;
+    width: 35vw;
+    background-color: rgb(255, 0, 0);
+    position: fixed;
+    z-index: 99;
+    border-radius: 1rem;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    padding-block: 60px;
+    padding-inline: 30px;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: lightblue #f0f0f0;
+}
+
+
+
+.recipe-content::-webkit-scrollbar {
+    width: 10px; /* Set the width of the scrollbar */
+  }
+
+  .recipe-content::-webkit-scrollbar-thumb {
+    background-color: lightblue; /* Set the color of the scrollbar thumb */
+    border-radius: 10px;
+  }
+
+  .recipe-content::-webkit-scrollbar-track {
+    background-color: #f0f0f0; /* Set the color of the scrollbar track */
+  }
+
+.dispN{
+    display: none;
+}
+
+.logo-img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: green;
+}
+
+.mainDet{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.mark{
+    top: 15px;
+    right: 30px;
+    position: absolute;
+    cursor: pointer;
+}
+.watch-video{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.logo-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recipe-content a{
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.instruction{
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+
+}
+
+.instruction p{
+    line-height: 3vh;
+}
+.box{
+    height: 450px;
+    width: 400px;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0 16px 2px rgb(0 , 0 , 0 , 0.1);
+}
+
+.img{
+    height: 55%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.img img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.text{
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    height: 45%;
+    width: 100%;
+    gap: 30px;
+}
+
+.text button{
+    height: 25%;
+    width: 50%;
+    border-radius: 2rem;
+    background-color: rgb(255, 22, 22);
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 1em;
+}
+
+button{
+    cursor: pointer;
+}
+
+.notFound{
+    color: red;
+    text-align: center;
+}
+
+@media (max-width:600px) {
+    nav{
+        height: 70px;
+    }
+    .textlogo {
+        font-size: 6vw;
+    }
+
+    nav .logo {
+        height: 100%;
+        width: 28vw;
+        object-fit: cover;
+    }
+
+    .container {
+        width: 100%;
+
+    }
+    .recipe-content{
+        width: 90vw;
+    }
+    #search{
+        width: 70vw;
+        height: 7vh;
+    }
+    .search button{
+        height: 7vh;
+        width: 10vw;
+    }
+    .box-content h1,p{
+        text-align: center;
+    }
+    .box-content{
+        gap: 25px;
+        padding-inline: 10px;
+    }
+    .result{
+        padding-inline: 10px;
+    }
+    .keyingredient{
+        height: 5vh;
+        width: 25vw;
+    }
+    .logo img{
+        object-fit: contain;
+    }
+}
