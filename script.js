@@ -5,6 +5,8 @@ const mainContainer = document.querySelector('.main-content');
 const heading = document.querySelector('.heading');
 const serRes = document.querySelector('#sear');
 const respCon = document.querySelector('.recipe-content');
+const list = document.querySelectorAll('.cat-list-value')
+
 
 function inputValue() {
     let value = input.value;
@@ -26,7 +28,7 @@ const getData = async (value) => {
 
 serBtn.addEventListener('click', async () => {
     const inputVal = inputValue();
-    if(inputVal.toLowerCase() === 'pork'){
+    if (inputVal.toLowerCase() === 'pork') {
         resultContainer.innerHTML = '';
         serRes.innerHTML = `IT'S HARAM BRO`;
         return;
@@ -41,6 +43,7 @@ serBtn.addEventListener('click', async () => {
 
 
 function apiData(value) {
+    heading.style.display = `block`
     let data = '';
     if (value !== null) {
         resultContainer.innerHTML = '';
@@ -83,15 +86,15 @@ async function nothing() {
     const ids = document.querySelectorAll('.mealId');
     for (const value of ids) {
         try {
-          const data = await respDetails(value.innerHTML);
-          if(data.strCategory.toLowerCase() === 'pork'){
-            value.parentNode.parentNode.remove();
-          }
+            const data = await respDetails(value.innerHTML);
+            if (data.strCategory.toLowerCase() === 'pork') {
+                value.parentNode.parentNode.remove();
+            }
         } catch (error) {
-          console.error('Error:', error);
+            console.error('Error:', error);
         }
-      }
-  }
+    }
+}
 
 
 resultContainer.addEventListener('click', async (event) => {
@@ -124,4 +127,29 @@ document.querySelector('.mark').addEventListener('click', () => {
     if (!respCon.classList.contains('dispN')) {
         respCon.classList.add('dispN')
     }
+})
+
+list.forEach(value => {
+    value.addEventListener('click', (event) => {
+        let value = event.target.innerHTML;
+        getData(value);
+    })
+})
+
+
+
+const goUpArrow = document.querySelector('.to-Up');
+
+
+window.addEventListener('scroll', (event) => {
+    const totalScrollHeight = document.documentElement.scrollHeight;
+    (scrollY >= 2020 && scrollY <= totalScrollHeight) ?
+        (goUpArrow.style.opacity = '1')
+        : (goUpArrow.style.opacity = '0');
+})
+goUpArrow.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    })
 })

@@ -157,6 +157,7 @@ i {
     overflow: auto;
     scrollbar-width: thin;
     scrollbar-color: lightblue #f0f0f0;
+    top: 120px;
 }
 
 
@@ -231,11 +232,22 @@ i {
     line-height: 3vh;
 }
 .box{
-    height: 450px;
+    height: 500px;
     width: 400px;
     border-radius: 1rem;
     overflow: hidden;
     box-shadow: 0 0 16px 2px rgb(0 , 0 , 0 , 0.1);
+    transition:all 0.2s ease;
+
+}
+
+.text button{
+    background-color: rgb(211, 0, 0);
+}
+
+.box:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 0 16px 5px rgba(0, 0, 0, 0.123);
 }
 
 .img{
@@ -278,6 +290,51 @@ button{
     text-align: center;
 }
 
+.to-Up{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    height: 40px;
+    width: 40px;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+    border-radius: 2rem;
+}
+
+.categories{
+    align-items: center;
+    margin-block-start: 35px;
+    width: 100%;
+    color: rgb(0, 0, 0);
+    height: 40px;
+    justify-content: center;
+}
+
+.heading{
+    display: none;
+}
+
+.cat-list-ul{
+    width: 100%;
+    /* justify-content: space-between; */
+    gap: 110px;
+    border-bottom: 2px solid black;
+}
+
+.cat-list-ul li{
+    list-style-type: none;
+    cursor: pointer;
+    padding-bottom: 5px;
+}
+
+.to-Up{
+    transition: all 0.5s ease;
+}
+
 @media (max-width:600px) {
     nav{
         height: 70px;
@@ -294,6 +351,7 @@ button{
 
     .container {
         width: 100%;
+        padding: 8px;
 
     }
     .recipe-content{
@@ -314,14 +372,20 @@ button{
         gap: 25px;
         padding-inline: 10px;
     }
-    .result{
-        padding-inline: 10px;
-    }
     .keyingredient{
         height: 5vh;
-        width: 25vw;
+        min-width: 25vw;
     }
     .logo img{
         object-fit: contain;
+    }
+    .to-Up{
+        right: 10px;
+        bottom: 10px;
+        height: 30px;
+        width: 30px;
+    }
+    .categories{
+        display: none;
     }
 }
